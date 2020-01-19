@@ -21,7 +21,6 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var castButton: UIButton!
     @IBOutlet weak var trailerButton: UIButton!
     @IBOutlet weak var pictureButton: UIButton!
-    @IBOutlet weak var trailerActivityIndicatorView: UIActivityIndicatorView!
     
     var castsOfMovie :Cast?
     var movieDetailResult : MovieDetails?
@@ -102,7 +101,7 @@ class MovieDetailViewController: UIViewController {
         tabName = TabName.Trailer.rawValue
         resetButtonCondition()
         sender.setTitleColor(.black, for: .normal)
-        self.movieDetailCollectionView.reloadData()
+        movieDetailCollectionView.reloadData()
     }
     @IBAction func didTapPictureButton(_ sender: UIButton) {
         tabName = TabName.Picture.rawValue
@@ -126,7 +125,6 @@ class MovieDetailViewController: UIViewController {
     }
     
 }
-
 
 //UICollection View Data Source
 extension MovieDetailViewController : UICollectionViewDataSource{

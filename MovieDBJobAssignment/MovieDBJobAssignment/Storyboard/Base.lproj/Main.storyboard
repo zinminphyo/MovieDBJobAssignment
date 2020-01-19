@@ -16,25 +16,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XSl-bm-647">
-                                <rect key="frame" x="0.0" y="112" width="414" height="350"/>
+                                <rect key="frame" x="16" y="112" width="398" height="350"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="RsR-yK-sbn"/>
+                                    <constraint firstAttribute="height" constant="350" id="eYY-4R-pZQ"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="10" id="TT5-GV-fVN">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="TT5-GV-fVN">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="XSl-bm-647" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="U7T-NW-Gca"/>
-                            <constraint firstItem="XSl-bm-647" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="e3c-5s-sDq"/>
-                            <constraint firstItem="XSl-bm-647" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uet-m9-b8I"/>
+                            <constraint firstItem="XSl-bm-647" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Tib-5R-FFe"/>
+                            <constraint firstItem="XSl-bm-647" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="gB6-4b-9kA"/>
+                            <constraint firstItem="XSl-bm-647" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pSI-E1-nqz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
