@@ -1,0 +1,6 @@
+framework module Pods_MovieDBJobAssignment {
+  umbrella header "Pods-MovieDBJobAssignment-umbrella.h"
+
+  export *
+  module * { export * }
+}

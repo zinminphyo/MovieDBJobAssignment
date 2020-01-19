@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" userLabel="Trailer Collection View Cell" customClass="TrailerCollectionViewCell" customModule="MovieDBJobAssignment" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="187" height="173"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="187" height="173"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzs-Qh-NiX" customClass="WKYTPlayerView">
+                        <rect key="frame" x="0.0" y="0.0" width="187" height="173"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Gzs-Qh-NiX" secondAttribute="trailing" id="6Cl-fJ-rYy"/>
+                <constraint firstItem="Gzs-Qh-NiX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8CJ-W8-uJ3"/>
+                <constraint firstAttribute="bottom" secondItem="Gzs-Qh-NiX" secondAttribute="bottom" id="Jwh-HG-5LE"/>
+                <constraint firstItem="Gzs-Qh-NiX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gDe-xn-teX"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="187" height="173"/>
+            <connections>
+                <outlet property="trailerPlayerView" destination="Gzs-Qh-NiX" id="xdq-Ra-TUf"/>
+            </connections>
+            <point key="canvasLocation" x="236.95652173913047" y="146.98660714285714"/>
+        </collectionViewCell>
+    </objects>
+</document>
