@@ -74,7 +74,6 @@ class NetWorkManager {
     
     static func getVideos(_ movieID : Int ,completed: @escaping () -> ()){
         guard let unwrappedURL = URL(string: "\(Constants.MOVIE_DETAIL_API)\(movieID)/videos?api_key=\(Constants.API_KEY)") else {return print("Error unwrapping movie vidoes url.")}
-        print("Videos url is \(unwrappedURL)")
         let urlSession = URLSession.shared
         let dataTask = urlSession.dataTask(with: unwrappedURL) { (data, reponse, error) in
             if error == nil {

@@ -8,6 +8,7 @@
 
 import UIKit
 import YoutubePlayer_in_WKWebView
+import Kingfisher
 
 class HomeViewController: UIViewController {
 
@@ -21,7 +22,7 @@ class HomeViewController: UIViewController {
 
     //IBActions
     @IBAction func didTapTrendingBArButtonItem(_ sender: UIBarButtonItem) {
-        trendingBarButtonItem.tintColor = .black
+        trendingBarButtonItem.tintColor = UIColor(named: "textColor")
         upcomingBarButtonItem.tintColor = .darkGray
         NetWorkManager.downloadJSON(Constants.TRENDING_BASE_URL) {
             self.list_of_movies = NetWorkManager.results
@@ -31,7 +32,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func didTapUpComingBarButtonItem(_ sender: UIBarButtonItem) {
         trendingBarButtonItem.tintColor = .darkGray
-        upcomingBarButtonItem.tintColor = .black
+        upcomingBarButtonItem.tintColor = UIColor(named: "textColor")
         NetWorkManager.downloadJSON(Constants.UPCOMING_BASE_URL) {
             self.list_of_movies = NetWorkManager.results
             self.moviesCollectionView.reloadData()
@@ -41,6 +42,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        trendingBarButtonItem.tintColor = UIColor(named: "textColor")
+        navigationController?.navigationBar.tintColor = UIColor(named: "textColor")
         self.list_of_movies?.results.removeAll()
         NetWorkManager.downloadJSON(Constants.TRENDING_BASE_URL) {
             self.list_of_movies = NetWorkManager.results
@@ -67,10 +70,9 @@ extension HomeViewController :UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MovieCollectionViewCell.self), for: indexPath) as? MovieCollectionViewCell else { return UICollectionViewCell() }
         if let currentMovie = list_of_movies?.results[indexPath.row]{
             cell.movieName.text = currentMovie.title
-            let currentMovieImage = currentMovie .poster_path
-            NetWorkManager.getImageFromURL(currentMovieImage) { (movieImage) in
-                cell.movieImage.image = movieImage
-            }
+            let posterPath = currentMovie.poster_path
+            let imageURL = URL(string: Constants.IMAGE_BASE_URL+posterPath)
+            cell.movieImage.kf.setImage(with:imageURL)
         }
         return cell
     }

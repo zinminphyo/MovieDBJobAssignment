@@ -14,6 +14,7 @@ class SynopsisCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var subtitlesLabel: UILabel!
     @IBOutlet weak var storyLabel: UILabel!
+    @IBOutlet weak var viewLayer: UIView!
     
     var movieDetail : MovieDetails?  {
         didSet {
@@ -29,12 +30,18 @@ class SynopsisCollectionViewCell: UICollectionViewCell {
     @IBAction func didTapOfficialPageButton(_ sender: UIButton) {
         UIApplication.shared.open(URL(string: (movieDetail?.homepage)!)!, options: .init(), completionHandler: nil)
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
+        updateTextColor()
+         
     }
-    
+    func updateTextColor() {
+        releaseDateLabel.textColor = UIColor(named: "textColor")
+        languageLabel.textColor = UIColor(named: "textColor")
+        subtitlesLabel.textColor = UIColor(named: "textColor")
+        storyLabel.textColor = UIColor(named: "textColor")
+    }
     
 
 }

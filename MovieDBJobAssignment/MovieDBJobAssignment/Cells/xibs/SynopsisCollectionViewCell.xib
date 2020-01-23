@@ -7,17 +7,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SynopsisCollectionViewCell" customModule="MovieDBJobAssignment" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SynopsisCollectionViewCell" customModule="MovieDBJobAssignment" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="330" height="273"/>
+            <rect key="frame" x="0.0" y="0.0" width="330" height="286"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="330" height="273"/>
+                <rect key="frame" x="0.0" y="0.0" width="330" height="286"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bzc-Df-OkH">
-                        <rect key="frame" x="0.0" y="0.0" width="330" height="273"/>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bzc-Df-OkH">
+                        <rect key="frame" x="0.0" y="0.0" width="330" height="286"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lPI-ba-Z3E">
                                 <rect key="frame" x="0.0" y="0.0" width="330" height="32"/>
@@ -75,61 +75,55 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWo-mw-Emb">
-                                <rect key="frame" x="8" y="56" width="80" height="36"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="RiJ-E5-PSK"/>
-                                    <constraint firstAttribute="height" constant="36" id="ZxZ-V1-qFx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="8" maxY="0.0"/>
-                                <state key="normal" title="BookMark">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEv-A6-rkY">
-                                <rect key="frame" x="112" y="56" width="90" height="36"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="Hl9-4H-7Dd"/>
-                                    <constraint firstAttribute="height" constant="36" id="aHf-vl-2td"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
-                                <state key="normal" title="Buy Tickets">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VPW-tR-czf">
+                                <rect key="frame" x="8" y="56" width="198" height="36"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWo-mw-Emb">
+                                        <rect key="frame" x="0.0" y="0.0" width="91" height="36"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="8" maxY="0.0"/>
+                                        <state key="normal" title="BookMark">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEv-A6-rkY">
+                                        <rect key="frame" x="107" y="0.0" width="91" height="36"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                        <state key="normal" title="Buy Tickets">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AF4-tW-Ezv">
-                                <rect key="frame" x="8" y="108" width="34.5" height="17"/>
+                                <rect key="frame" x="8" y="114" width="34.5" height="17"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYn-pV-nm4">
-                                <rect key="frame" x="8" y="133" width="306" height="73"/>
+                                <rect key="frame" x="8" y="139" width="306" height="72"/>
                                 <string key="text">Thirdly, create a separate view, called ImageOverlay, which contains the desired text with appropriate styling. Wrap the text view in a ZStack to create a nice sticker impression with rounded corners, opacity and background color.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfu-HL-8m5">
-                                <rect key="frame" x="8" y="222" width="314" height="35"/>
+                                <rect key="frame" x="8" y="227" width="314" height="43"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="a3Z-dA-Ehf"/>
-                                </constraints>
                                 <state key="normal" title="Go offcial page">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -147,20 +141,20 @@
                         <constraints>
                             <constraint firstItem="AF4-tW-Ezv" firstAttribute="leading" secondItem="Bzc-Df-OkH" secondAttribute="leading" constant="8" id="4DU-3n-8JY"/>
                             <constraint firstItem="lPI-ba-Z3E" firstAttribute="top" secondItem="Bzc-Df-OkH" secondAttribute="top" id="4FB-9d-5D5"/>
+                            <constraint firstItem="VPW-tR-czf" firstAttribute="width" secondItem="Bzc-Df-OkH" secondAttribute="width" multiplier="0.6" id="9y2-u0-yp0"/>
                             <constraint firstItem="OYn-pV-nm4" firstAttribute="leading" secondItem="Bzc-Df-OkH" secondAttribute="leading" constant="8" id="A2W-0g-aaZ"/>
-                            <constraint firstAttribute="width" constant="330" id="Btc-xF-poq"/>
-                            <constraint firstItem="sEv-A6-rkY" firstAttribute="top" secondItem="lPI-ba-Z3E" secondAttribute="bottom" constant="24" id="Fc0-bR-K0W"/>
-                            <constraint firstItem="KWo-mw-Emb" firstAttribute="top" secondItem="lPI-ba-Z3E" secondAttribute="bottom" constant="24" id="O5Q-7w-jlz"/>
+                            <constraint firstItem="VPW-tR-czf" firstAttribute="top" secondItem="lPI-ba-Z3E" secondAttribute="bottom" constant="24" id="Bi0-fE-YyR"/>
+                            <constraint firstItem="AF4-tW-Ezv" firstAttribute="top" secondItem="VPW-tR-czf" secondAttribute="bottom" constant="22" id="K1W-YJ-M0s"/>
                             <constraint firstItem="lPI-ba-Z3E" firstAttribute="leading" secondItem="Bzc-Df-OkH" secondAttribute="leading" id="RKv-LE-ozS"/>
+                            <constraint firstItem="VPW-tR-czf" firstAttribute="leading" secondItem="Bzc-Df-OkH" secondAttribute="leading" constant="8" id="VOI-mb-Hae"/>
+                            <constraint firstItem="hfu-HL-8m5" firstAttribute="height" secondItem="Bzc-Df-OkH" secondAttribute="height" multiplier="0.15" id="WEW-gP-mPU"/>
                             <constraint firstItem="hfu-HL-8m5" firstAttribute="leading" secondItem="Bzc-Df-OkH" secondAttribute="leading" constant="8" id="WFp-1h-8Vi"/>
                             <constraint firstAttribute="trailing" secondItem="OYn-pV-nm4" secondAttribute="trailing" constant="16" id="ZAJ-vH-5E7"/>
-                            <constraint firstItem="KWo-mw-Emb" firstAttribute="leading" secondItem="Bzc-Df-OkH" secondAttribute="leading" constant="8" id="h50-T9-TFw"/>
-                            <constraint firstItem="sEv-A6-rkY" firstAttribute="leading" secondItem="KWo-mw-Emb" secondAttribute="trailing" constant="24" id="j1Q-o0-6tq"/>
                             <constraint firstAttribute="bottom" secondItem="hfu-HL-8m5" secondAttribute="bottom" constant="16" id="jds-vP-W9i"/>
                             <constraint firstAttribute="trailing" secondItem="hfu-HL-8m5" secondAttribute="trailing" constant="8" id="pih-JI-dAy"/>
                             <constraint firstItem="hfu-HL-8m5" firstAttribute="top" secondItem="OYn-pV-nm4" secondAttribute="bottom" constant="16" id="rPG-he-RF0"/>
+                            <constraint firstItem="VPW-tR-czf" firstAttribute="height" secondItem="hfu-HL-8m5" secondAttribute="height" multiplier="0.837209" id="sLu-7r-91f"/>
                             <constraint firstItem="OYn-pV-nm4" firstAttribute="top" secondItem="AF4-tW-Ezv" secondAttribute="bottom" constant="8" id="tf0-sp-VeE"/>
-                            <constraint firstItem="AF4-tW-Ezv" firstAttribute="top" secondItem="KWo-mw-Emb" secondAttribute="bottom" constant="16" id="tyX-8i-OVq"/>
                             <constraint firstAttribute="trailing" secondItem="lPI-ba-Z3E" secondAttribute="trailing" id="xrE-Jc-5bM"/>
                         </constraints>
                     </view>
@@ -173,14 +167,15 @@
                 <constraint firstAttribute="bottom" secondItem="Bzc-Df-OkH" secondAttribute="bottom" id="wrh-6D-Guf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="300" height="273"/>
+            <size key="customSize" width="300" height="286"/>
             <connections>
                 <outlet property="languageLabel" destination="gM7-ce-1L7" id="hB2-uG-dIV"/>
                 <outlet property="releaseDateLabel" destination="pyu-wm-faB" id="U34-US-lXs"/>
-                <outlet property="storyLabel" destination="OYn-pV-nm4" id="Zlh-E7-Q1n"/>
+                <outlet property="storyLabel" destination="OYn-pV-nm4" id="YBO-Ap-4BK"/>
                 <outlet property="subtitlesLabel" destination="NEH-As-Fal" id="g7X-ub-emg"/>
+                <outlet property="viewLayer" destination="Bzc-Df-OkH" id="PF2-Mc-8AT"/>
             </connections>
-            <point key="canvasLocation" x="102.89855072463769" y="27.120535714285712"/>
+            <point key="canvasLocation" x="102.89855072463769" y="31.473214285714285"/>
         </collectionViewCell>
     </objects>
 </document>

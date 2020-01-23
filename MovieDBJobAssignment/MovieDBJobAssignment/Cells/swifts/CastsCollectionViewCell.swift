@@ -19,9 +19,11 @@ class CastsCollectionViewCell: UICollectionViewCell {
         didSet {
             if let castInfo = castInfo {
                 guard let castImage = castInfo.profile_path else {return}
-                NetWorkManager.getImageFromURL(castImage) { (castImage) in
-                    self.castImageView.image = castImage
-                }
+//                NetWorkManager.getImageFromURL(castImage) { (castImage) in
+//                    self.castImageView.image = castImage
+//                }
+                let castImageURL = URL(string: Constants.IMAGE_BASE_URL+castImage)
+                castImageView.kf.setImage(with: castImageURL)
                 castNameLabel.text = castInfo.name
                 castCharacterLabel.text = castInfo.character
             }
@@ -32,9 +34,11 @@ class CastsCollectionViewCell: UICollectionViewCell {
         didSet {
             if let companyInfo = company {
                 guard let companyLogo = companyInfo.logo_path else { return castImageView.image = UIImage(named: "NotFound") }
-                NetWorkManager.getImageFromURL(companyLogo) { (companyImage) in
-                    self.castImageView.image = companyImage
-                }
+//                NetWorkManager.getImageFromURL(companyLogo) { (companyImage) in
+//                    self.castImageView.image = companyImage
+//                }
+                let companyLogoURL = URL(string: Constants.IMAGE_BASE_URL+companyLogo)
+                castImageView.kf.setImage(with: companyLogoURL)
                 castNameLabel.text = companyInfo.name
                 castCharacterLabel.text = companyInfo.origin_country
 

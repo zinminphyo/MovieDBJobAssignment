@@ -21,6 +21,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var castButton: UIButton!
     @IBOutlet weak var trailerButton: UIButton!
     @IBOutlet weak var pictureButton: UIButton!
+    @IBOutlet weak var ratingImage: UIImageView!
     
     var castsOfMovie :Cast?
     var movieDetailResult : MovieDetails?
@@ -38,14 +39,16 @@ class MovieDetailViewController: UIViewController {
         
         //View SetUp
         navigationBarConfigure()
-        movieDetailImage.addOverlay()
+        textColorAppearance()
+        
         
         //Get MovieDetails
         NetWorkManager.getMovieDetails(movieID!) {
             self.movieDetailResult = NetWorkManager.movieDetails
-            NetWorkManager.getImageFromURL(self.movieDetailResult!.backdrop_path) { (movieBackDropImage) in
-                self.movieDetailImage.image = movieBackDropImage
-            }
+            let movieDropPath = self.movieDetailResult!.backdrop_path
+            let movieImageURL = URL(string: Constants.IMAGE_BASE_URL+movieDropPath)
+            self.movieDetailImage.kf.indicatorType = .activity
+            self.movieDetailImage.kf.setImage(with: movieImageURL,options: [.transition(.fade(0.4))])
             self.movieDescription.text = self.movieDetailResult!.overview
             self.movieName.text = self.movieDetailResult?.title
             
@@ -84,28 +87,46 @@ class MovieDetailViewController: UIViewController {
         movieDetailCollectionView.register(UINib(nibName: String(describing: SynopsisCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: SynopsisCollectionViewCell.self))
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        movieDetailImage.addOverlay()
+        defaultTabAction()
+    }
+    
     //IBAction
     @IBAction func didTapSynopsis(_ sender: UIButton) {
+        
         tabName = TabName.Synopsis.rawValue
         movieDetailCollectionView.reloadData()
         resetButtonCondition()
+        sender.isSelected = true
         sender.setTitleColor(.black, for: .normal)
     }
     @IBAction func didTapCastButton(_ sender: UIButton) {
+        
         tabName = TabName.Cast.rawValue
         resetButtonCondition()
+        sender.isSelected = true
         sender.setTitleColor(.black, for: .normal)
         movieDetailCollectionView.reloadData()
     }
     @IBAction func didTapTrailerButton(_ sender: UIButton) {
+        
         tabName = TabName.Trailer.rawValue
         resetButtonCondition()
+        sender.isSelected = true
         sender.setTitleColor(.black, for: .normal)
         movieDetailCollectionView.reloadData()
     }
     @IBAction func didTapPictureButton(_ sender: UIButton) {
+        
         tabName = TabName.Picture.rawValue
         resetButtonCondition()
+        sender.isSelected = true
         sender.setTitleColor(.black, for: .normal)
         self.movieDetailCollectionView.reloadData()
     }
@@ -115,6 +136,26 @@ class MovieDetailViewController: UIViewController {
         castButton.setTitleColor(.gray, for: .normal)
         trailerButton.setTitleColor(.gray, for: .normal)
         pictureButton.setTitleColor(.gray, for: .normal)
+        synophisButton.isSelected = false
+        castButton.isSelected = false
+        trailerButton.isSelected = false
+        pictureButton.isSelected = false
+    }
+    
+    func textColorAppearance() {
+        
+        movieName.textColor = UIColor(named: "textColor")
+        movieDirectorName.textColor = UIColor(named: "textColor")
+        movieType.textColor = UIColor(named: "textColor")
+        movieDescription.textColor = UIColor(named: "textColor")
+        movieRating.textColor = UIColor(named: "textColor")
+        synophisButton.tintColor = UIColor(named: "textColor")
+        castButton.tintColor = UIColor(named: "textColor")
+        trailerButton.tintColor = UIColor(named: "textColor")
+        pictureButton.tintColor = UIColor(named: "textColor")
+        ratingImage.image = UIImage(named: "ratingImage")?.withRenderingMode(.alwaysTemplate)
+        ratingImage.tintColor = UIColor(named: "textColor")
+        
     }
     
     func navigationBarConfigure(){
@@ -124,13 +165,22 @@ class MovieDetailViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = .clear
     }
     
+    func defaultTabAction() {
+        tabName = TabName.Synopsis.rawValue
+        movieDetailCollectionView.reloadData()
+        resetButtonCondition()
+        synophisButton.isSelected = true
+    }
+    
 }
 
 //UICollection View Data Source
 extension MovieDetailViewController : UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
         switch tabName {
+        
         case "Synopsis":
             return 1
             
@@ -146,6 +196,7 @@ extension MovieDetailViewController : UICollectionViewDataSource{
         default:
             return 0
         }
+        
         
     }
     
@@ -188,7 +239,7 @@ extension MovieDetailViewController :UICollectionViewDelegateFlowLayout {
         switch tabName {
 
         case "Synopsis" :
-            return CGSize(width: UIScreen.main.bounds.width - 30, height: 273)
+            return CGSize(width: UIScreen.main.bounds.width - 40 , height: 273)
             
         case "Cast" :
             return CGSize(width: 150, height: 230)
